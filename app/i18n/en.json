@@ -5,6 +5,7 @@
     "back": "Back"
   },
   "errors": {
+    "throwError": "THROW ERROR",
     "invalidEmail": "Invalid email address."
   },
   "welcomeScreen": {
