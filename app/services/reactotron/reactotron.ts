@@ -8,6 +8,7 @@ import { mst } from "reactotron-mst"
 import { clear } from "../../utils/storage"
 import { goBack, resetRoot, navigate } from "../../navigators/navigation-utilities"
 import { Platform } from "react-native"
+import { openInEditor, trackGlobalErrors } from "reactotron-react-native"
 
 // Teach TypeScript about the bad things we want to do.
 declare global {
@@ -138,6 +139,10 @@ export class Reactotron {
           filter: (event) => RX.test(event.name) === false,
         }),
       )
+
+      // display red screen errors in reactotron
+      Tron.use(openInEditor({}))
+      Tron.use(trackGlobalErrors({}))
 
       // connect to the app
       Tron.connect()
