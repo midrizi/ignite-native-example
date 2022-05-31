@@ -80,6 +80,15 @@ const CONTINUE_TEXT: TextStyle = {
   fontSize: 13,
   letterSpacing: 2,
 }
+
+const THROW_ERROR_TEXT: TextStyle = {
+  ...TEXT,
+  ...BOLD,
+  fontSize: 13,
+  letterSpacing: 2,
+  color: "red",
+}
+
 const FOOTER: ViewStyle = { backgroundColor: "#20162D" }
 const FOOTER_CONTENT: ViewStyle = {
   paddingVertical: spacing[4],
@@ -110,6 +119,17 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
             For everyone else, this is where you'll see a live preview of your fully functioning app
             using Ignite.
           </Text>
+          <Button
+            style={CONTINUE}
+            textStyle={THROW_ERROR_TEXT}
+            onPress={() => {
+              const artists = [1]
+
+              // line will always throw an error
+              artists.map((a) => console.tron.log(aa))
+            }}
+            tx="errors.throwError"
+          />
         </Screen>
         <SafeAreaView style={FOOTER}>
           <View style={FOOTER_CONTENT}>
