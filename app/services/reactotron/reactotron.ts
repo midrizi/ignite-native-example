@@ -140,8 +140,6 @@ export class Reactotron {
         }),
       )
 
-      // display red screen errors in reactotron
-      Tron.use(openInEditor({}))
       Tron.use(trackGlobalErrors({}))
 
       // connect to the app
